@@ -3,6 +3,7 @@ import { Router, Route, Switch } from "react-router-dom";
 import { Container } from "reactstrap";
 
 import PrivateRoute from "./components/PrivateRoute";
+import Scraper from "./components/scraper/Scraper";
 import Loading from "./components/Loading";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="/about" exact component={About} />
             <Route path="/contact" exact component={Contact} />
             <PrivateRoute path="/profile" component={Profile} />
+            <PrivateRoute path="/scraper" component={Scraper} />
           </Switch>
         </Container>
         <Footer />
