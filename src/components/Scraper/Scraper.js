@@ -1,4 +1,4 @@
-import React, { Component, createContext } from "react";
+import React, { Component, createContext, useContext } from "react";
 import Data from "./Data";
 // import Notes from "./Notes";
 import Dashboard from "./Dashboard";
@@ -12,10 +12,13 @@ class Scraper extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      watchlist: ["mt"]
+      watchlist: ["mt"],
+      loading: false,
+      previousScrape: null
     };
 
     this.handleClickNewScrape = this.handleClickNewScrape.bind(this);
+    this.onSelect = this.onSelect.bind(this);
   }
 
   componentDidMount() {
@@ -47,6 +50,18 @@ class Scraper extends Component {
     let newScrape = Data.makeNewScrape(this.state.watchlist);
   }
 
+  onSelect(e) {
+    e.preventDefault();
+    console.log(this.state.previousScrape);
+    this.setState({ previousScrape: e.target.value });
+    console.log(e.target.value);
+    console.log(this.state.previousScrape);
+    // hooks can only be called from within a function component
+    // const value = useContext(DataContext);
+    // this.setState({ previousScrape: value });
+    return this.state.previousScrape;
+  }
+
   findAllStocks() {
     $.ajax({
       url: "http://localhost:8081/rest/api/findAllStocks/",
@@ -66,12 +81,14 @@ class Scraper extends Component {
   }
 
   render() {
+    console.log(this.state.watchlist);
     let newScrape = Data.makeNewScrape(this.state.watchlist);
     let previousScrape = Data.makePreviousScrape(
       this.state.previousScrape,
       this.state.watchlist
     );
     let timeStampSet = Data.makeTimeStampSet(this.state.watchlist);
+    let loading = this.state.loading;
 
     const data = {
       name: "Me",
@@ -81,11 +98,14 @@ class Scraper extends Component {
       handleClickNewScrape: () => {
         this.handleClickNewScrape();
       },
-
+      onSelect: e => {
+        this.onSelect(e);
+      },
       values: [...timeStampSet.values()],
       formatDate: epochTime => {
         this.formatDate(epochTime);
-      }
+      },
+      loading: loading
     };
     // console.log(data.watchlist);
     return (

@@ -26,7 +26,6 @@ const Snapshot = () => (
             : data.previousScrape
         ).map((wl, i) => {
           let date = new Date(wl.timeStamp);
-          console.log(i);
           if (i === 0) {
             return (
               <>

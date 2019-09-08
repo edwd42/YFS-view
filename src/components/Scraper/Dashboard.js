@@ -24,7 +24,7 @@ const Dashboard = props => (
               <span>&nbsp;&nbsp;&nbsp;</span>
               <select
                 value={data.value}
-                onChange={event => data._onSelect(event)}
+                onChange={event => data.onSelect(event)}
               >
                 <option selected="selected">Previous Scrapes</option>
                 {data.values.map(item => (
