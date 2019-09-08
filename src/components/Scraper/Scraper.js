@@ -1,6 +1,7 @@
 import React, { Component, createContext } from "react";
 import Data from "./Data";
-import Notes from "./Notes";
+// import Notes from "./Notes";
+import Dashboard from "./Dashboard";
 import Snapshot from "./Snapshot";
 import $ from "jquery";
 
@@ -60,8 +61,9 @@ class Scraper extends Component {
     return (
       <ScraperContext.Provider value={data}>
         {this.props.children}
-        {/* <p>I am the Scraper App. You have logged in to see me. Good job, Ed.</p>
-        <Notes /> */}
+        <p>I am the Scraper App. You have logged in to see me. Good job, Ed.</p>
+        {/* <Notes /> */}
+        <Dashboard />
         <Snapshot />
       </ScraperContext.Provider>
     );

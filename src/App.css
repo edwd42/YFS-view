@@ -42,7 +42,8 @@ table {
   margin: auto;
 }
 
-td {
+td,
+th {
   text-align: right;
 }
 

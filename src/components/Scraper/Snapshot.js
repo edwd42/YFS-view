@@ -6,13 +6,14 @@ import { ScraperContext } from "./Scraper";
 const leftAlign = { textAlign: "left" };
 const collapse = { visibility: "collapse" };
 const caption = {
-  position: "absolute",
   width: "100%",
   margin: "auto",
   backgroundColor: "lightsteelblue",
   padding: "12px 32px",
   textDecoration: "none",
-  fontSize: "18px"
+  fontSize: "24px",
+  fontWeight: "bold",
+  textAlign: "center"
 };
 
 const Snapshot = () => (
