@@ -1,6 +1,7 @@
 import React, { Component, createContext } from "react";
 import Notes from "./Notes";
-const AppContext = createContext(null);
+import Snapshot from "./Snapshot";
+const ScraperContext = createContext(null);
 
 class Scraper extends Component {
   render() {
@@ -8,12 +9,13 @@ class Scraper extends Component {
       name: "Me"
     };
     return (
-      <AppContext.Provider value={data}>
+      <ScraperContext.Provider value={data}>
         <p>I am the Scraper App. You have logged in to see me. Good job, Ed.</p>
         <Notes />
-      </AppContext.Provider>
+        <Snapshot />
+      </ScraperContext.Provider>
     );
   }
 }
 
-export default Scraper;
+export { Scraper as default, ScraperContext };

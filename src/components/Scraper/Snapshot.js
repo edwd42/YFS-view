@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from "react";
-import "../../../App.css";
-import { AppContext } from "./Scraper";
+import "../../App.css";
+import { ScraperContext } from "./Scraper";
 
 // const leftAlign = { textAlign: "left" };
 // const collapse = { visibility: "collapse" };
@@ -14,10 +14,10 @@ import { AppContext } from "./Scraper";
 // };
 
 const Snapshot = () => (
-  <AppContext.Consumer>
+  <ScraperContext.Consumer>
     {data => (
       <React.Fragment>
-        <p>hello {data.name}</p>
+        <p>Hello {data.name}</p>
         {/* {Object.values(
           data.previousScrape.length === 0
             ? data.newScrape
@@ -82,7 +82,7 @@ const Snapshot = () => (
         })} */}
       </React.Fragment>
     )}
-  </AppContext.Consumer>
+  </ScraperContext.Consumer>
 );
 
 export default Snapshot;
