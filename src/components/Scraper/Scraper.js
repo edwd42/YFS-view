@@ -4,6 +4,7 @@ import Data from "./Data";
 import Dashboard from "./Dashboard";
 import Snapshot from "./Snapshot";
 import $ from "jquery";
+import axios from "axios";
 
 const ScraperContext = createContext(null);
 
@@ -13,12 +14,37 @@ class Scraper extends Component {
     this.state = {
       watchlist: ["mt"]
     };
+
+    this.handleClickNewScrape = this.handleClickNewScrape.bind(this);
   }
 
   componentDidMount() {
     this.setState(() => {
       return { watchlist: this.findAllStocks() };
     });
+  }
+
+  async handleClickNewScrape() {
+    this.setState({
+      previousScrape: null,
+      loading: true
+    });
+    try {
+      let response = await axios.get(`http://localhost:8081/scrape`);
+      if (response) {
+        this.setState({ watchlist: response.data });
+        await this.findAllStocks();
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
+    this.setState({
+      previousScrape: null,
+      loading: false
+    });
+    console.log(this.state.loading);
+    let newScrape = Data.makeNewScrape(this.state.watchlist);
   }
 
   findAllStocks() {
@@ -52,6 +78,10 @@ class Scraper extends Component {
       watchlist: this.state.watchlist,
       newScrape: newScrape,
       previousScrape: previousScrape,
+      handleClickNewScrape: () => {
+        this.handleClickNewScrape();
+      },
+
       values: [...timeStampSet.values()],
       formatDate: epochTime => {
         this.formatDate(epochTime);
