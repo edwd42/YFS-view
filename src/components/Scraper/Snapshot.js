@@ -1,23 +1,24 @@
 // @ts-nocheck
 import React from "react";
 import "../../../App.css";
-import { AppContext } from "../App";
+import { AppContext } from "./Scraper";
 
-const leftAlign = { textAlign: "left" };
-const collapse = { visibility: "collapse" };
-const hide = { display: "none" };
-const caption = {
-  backgroundColor: "lightsteelblue",
-  padding: "12px 32px",
-  textDecoration: "none",
-  fontSize: "18px"
-};
+// const leftAlign = { textAlign: "left" };
+// const collapse = { visibility: "collapse" };
+// const hide = { display: "none" };
+// const caption = {
+//   backgroundColor: "lightsteelblue",
+//   padding: "12px 32px",
+//   textDecoration: "none",
+//   fontSize: "18px"
+// };
 
 const Snapshot = () => (
   <AppContext.Consumer>
     {data => (
       <React.Fragment>
-        {Object.values(
+        <p>hello {data.name}</p>
+        {/* {Object.values(
           data.previousScrape.length === 0
             ? data.newScrape
             : data.previousScrape
@@ -78,7 +79,7 @@ const Snapshot = () => (
               </table>
             );
           }
-        })}
+        })} */}
       </React.Fragment>
     )}
   </AppContext.Consumer>

@@ -38,7 +38,7 @@ const App = () => {
             <Route path="/about" exact component={About} />
             <Route path="/contact" exact component={Contact} />
             <PrivateRoute path="/profile" component={Profile} />
-            <PrivateRoute path="/scraper" component={Scraper} />
+            <Route path="/scraper" component={Scraper} />
           </Switch>
         </Container>
         <Footer />
