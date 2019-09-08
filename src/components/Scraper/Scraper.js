@@ -1,10 +1,20 @@
 import React, { Component, createContext } from "react";
+import Data from "./Data";
 import Notes from "./Notes";
 import Snapshot from "./Snapshot";
 const ScraperContext = createContext(null);
 
 class Scraper extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      watchlist: ["empty"]
+    };
+  }
+
   render() {
+    console.log(this.state.watchlist);
+
     const data = {
       name: "Me"
     };
