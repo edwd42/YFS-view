@@ -38,7 +38,7 @@ const App = () => {
             <Route path="/about" exact component={About} />
             <Route path="/contact" exact component={Contact} />
             <PrivateRoute path="/profile" component={Profile} />
-            <Route path="/scraper" component={Scraper} />
+            <PrivateRoute path="/scraper" component={Scraper} />
             {/* <Route
               exact
               path="/snapshot/:previousScrape"
