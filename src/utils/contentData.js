@@ -1,27 +1,27 @@
 const contentData = [
   {
-    title: "Java and Spring Boot Controller",
-    link: "#",
+    title: "Controller - Java and Spring Boot",
+    link: "https://spring.io/",
     description:
-      "Auth0 supports social providers as Facebook, Twitter, Instagram and 100+, Enterprise providers as Microsoft Office 365, Google Apps, Azure, and more. You can also use any OAuth2 Authorization Server."
+      "Spring Boot makes it easy to create stand-alone, production-grade Java based Applications with embed Tomcat.  Spring Boot provides opinionated 'starter' dependencies to simplify your build configuration.  Automatically configure Spring and 3rd party libraries whenever possible."
   },
   {
     title: "Auth0.com Security and Authentication",
     link: "https://auth0.com",
     description:
-      "Add an extra layer of security by enabling Multi-factor Authentication, requiring your users to provide more than one piece of identifying information. Push notifications, authenticator apps, SMS, and DUO Security are supported."
+      "Auth0.com provides a universal authentication & authorization platform for web, mobile and legacy applications.  Add an extra layer of security by enabling Multi-factor Authentication, requiring your users to provide more than one piece of identifying information."
   },
   {
-    title: "React.js Front-end View",
-    link: "#",
+    title: "Front-end View - React",
+    link: "https://reactjs.org/",
     description:
-      "Auth0 can detect anomalies and stop malicious attempts to access your application. Anomaly detection can alert you and your users of suspicious activity, as well as block further login attempts."
+      "React is a JavaScript library for building user interfaces.  Build encapsulated components that manage their own state, then compose them to make complex UIs.  Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM."
   },
   {
-    title: "MongoDB Model",
-    link: "",
+    title: "Model - MongoDB",
+    link: "https://www.mongodb.com/",
     description:
-      "Rules are JavaScript functions that execute when a user authenticates to your application. They run once the authentication process is complete, and you can use them to customize and extend Auth0's capabilities."
+      "MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database is more productive to use.  MongoDB is used by millions of developers to power the world's most innovative products and services."
   }
 ];
 

@@ -111,8 +111,9 @@ class Scraper extends Component {
     return (
       <ScraperContext.Provider value={data}>
         {this.props.children}
-        <p>I am the Scraper App. You have logged in to see me. Good job, Ed.</p>
-        {/* <Notes /> */}
+        <p>
+          This is the Scraper App. You have logged in to see me. Good job, Ed.
+        </p>
         <Dashboard />
         <Snapshot />
       </ScraperContext.Provider>

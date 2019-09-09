@@ -85,7 +85,7 @@ img {
   max-width: 100%;
   height: auto;
   margin: 0px 0px 5px 0px;
-  padding: 15px 0px 15px 0px;
+  /* padding: 15px 0px 15px 0px; */
 }
 
 .description {
@@ -146,11 +146,11 @@ img {
 }
 
 .hero {
-  max-width: 1500px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .mt-5,
 .my-5 {
-  margin-top: 0.2rem !important;
+  margin-top: 1.2rem !important;
 }

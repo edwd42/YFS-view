@@ -11,6 +11,7 @@ class Data {
       priorScrape: null
     };
   }
+
   makeNewScrape(watchlist) {
     var newest = this.makeTimeStampSet(watchlist);
     newest = Math.max(...newest);

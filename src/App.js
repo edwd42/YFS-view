@@ -4,7 +4,6 @@ import { Container } from "reactstrap";
 
 import PrivateRoute from "./components/PrivateRoute";
 import Scraper from "./components/scraper/Scraper";
-import Snapshot from "./components/scraper/Snapshot";
 import Loading from "./components/Loading";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -14,8 +13,6 @@ import Contact from "./views/Contact";
 import Profile from "./views/Profile";
 import { useAuth0 } from "./react-auth0-spa";
 import history from "./utils/history";
-
-import { DataContext } from "./components/scraper/Data";
 
 // styles
 import "./App.css";

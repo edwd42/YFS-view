@@ -20,8 +20,6 @@ import {
 
 import { useAuth0 } from "../react-auth0-spa";
 
-import navbar_logo from "../assets/favicon.png";
-
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
@@ -37,7 +35,6 @@ const NavBar = () => {
       <Navbar color="light" light expand="md">
         <Container>
           <NavbarBrand className="logo" />
-          {/* <NavbarBrand img src={navbar_logo} alt="DraCODEss logo" /> */}
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
