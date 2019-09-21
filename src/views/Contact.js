@@ -40,28 +40,36 @@ const Contact = () => (
       <br />
       <span>
         Twitter:
-        <a href="@edwd42" target="_blank" alt="twitter">
+        <a href="@edwd42" target="_blank" rel="noopener noreferrer">
           @edwd42
         </a>
       </span>
       <br />
       <span>
         GitHub:
-        <a href="https://github.com/edwd42" target="_blank" alt="GitHub">
+        <a
+          href="https://github.com/edwd42"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           https://github.com/edwd42
         </a>
       </span>
       <br />
       <span>
         LinkedIn:
-        <a href="www.linkedin.com/edwd42" target="_blank" alt="LinkedIn">
+        <a
+          href="www.linkedin.com/edwd42"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           www.linkedin.com/edwd42
         </a>
       </span>
       <br />
       <span>
         Web:
-        <a href="https://edwd42.com" target="_blank" alt="web site">
+        <a href="https://edwd42.com" target="_blank" rel="noopener noreferrer">
           https://edwd42.com
         </a>
       </span>

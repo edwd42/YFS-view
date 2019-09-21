@@ -1,6 +1,4 @@
 import React from "react";
-
-import logo from "../assets/logo.svg";
 import yahoo_finance from "../assets/yahoo_finance.png";
 
 const Hero = () => (

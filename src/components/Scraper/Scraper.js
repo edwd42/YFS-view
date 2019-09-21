@@ -1,10 +1,10 @@
-import React, { Component, createContext, useContext } from "react";
-import Data from "./Data";
+import axios from "axios";
+import $ from "jquery";
+import React, { Component, createContext } from "react";
 // import Notes from "./Notes";
 import Dashboard from "./Dashboard";
+import Data from "./Data";
 import Snapshot from "./Snapshot";
-import $ from "jquery";
-import axios from "axios";
 
 const ScraperContext = createContext(null);
 
@@ -12,7 +12,7 @@ class Scraper extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      watchlist: ["mt"],
+      watchlist: [""],
       loading: false,
       previousScrape: null
     };
@@ -47,7 +47,7 @@ class Scraper extends Component {
       loading: false
     });
     console.log(this.state.loading);
-    let newScrape = Data.makeNewScrape(this.state.watchlist);
+    Data.makeNewScrape(this.state.watchlist);
   }
 
   onSelect(e) {

@@ -1,7 +1,5 @@
 import React from "react";
-// import axios from "axios";
-// import $ from "jquery";
-// import { createContext } from "react";
+
 export const DataContext = React.createContext(null);
 
 class Data {
@@ -37,7 +35,7 @@ class Data {
     try {
       if (watchlist) {
         for (let i = 0; i < watchlist.length; i++) {
-          if (watchlist[i].timeStamp == previousScrape) {
+          if (watchlist[i].timeStamp === previousScrape) {
             priorScrape.push(watchlist[i]);
           }
         }
