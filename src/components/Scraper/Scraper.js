@@ -33,7 +33,10 @@ class Scraper extends Component {
       loading: true
     });
     try {
-      let response = await axios.get(`http://localhost:8081/scrape`);
+      // let response = await axios.get(`http://localhost:8081/scrape`);
+      let response = await axios.get(
+        `https://yahoo-scraper-0.herokuapp.com/scrape`
+      );
       if (response) {
         this.setState({ watchlist: response.data });
         await this.findAllStocks();
@@ -64,7 +67,8 @@ class Scraper extends Component {
 
   findAllStocks() {
     $.ajax({
-      url: "http://localhost:8081/rest/api/findAllStocks/",
+      // url: "http://localhost:8081/rest/api/findAllStocks/",
+      url: "https://yahoo-scraper-0.herokuapp.com/rest/api/findAllStocks/",
       dataType: "json",
       cache: false,
       success: function(data) {
