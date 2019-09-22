@@ -21,9 +21,9 @@ const Snapshot = () => (
     {data => (
       <React.Fragment>
         {Object.values(
-          data.previousScrape.length === 0
+          data.previousScrapeArr.length === 0
             ? data.newScrape
-            : data.previousScrape
+            : data.previousScrapeArr
         ).map((wl, i) => {
           let date = new Date(wl.timeStamp);
           if (i === 0) {

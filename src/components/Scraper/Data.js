@@ -3,7 +3,9 @@ import React from "react";
 export const DataContext = React.createContext(null);
 
 class Data {
-  constructor(props) {
+  constructor() {
+    // super() is only valid inside a class constructor of a subclass.
+    // this class Data is not a subclass of React.Component
     // super(props);
     this.state = {
       priorScrape: null
@@ -12,12 +14,12 @@ class Data {
 
   makeNewScrape(watchlist) {
     var newest = this.makeTimeStampSet(watchlist);
-    newest = Math.max(...newest);
+    let newestTs = Math.max(...newest);
     let newScrape = [];
     try {
       if (watchlist) {
         for (let i = 0; i < watchlist.length; i++) {
-          if (watchlist[i].timeStamp === newest) {
+          if (watchlist[i].timeStamp === newestTs) {
             newScrape.push(watchlist[i]);
           }
         }
@@ -28,24 +30,26 @@ class Data {
     return newScrape;
   }
 
-  makePreviousScrape(previousScrape, watchlist) {
-    console.log(previousScrape);
+  makePreviousScrape(priorScrapeTs, watchlist) {
+    console.log(priorScrapeTs);
     console.log(watchlist);
-    let priorScrape = [];
+    let previousScrapeArr = [];
+    let counter = 0;
     try {
       if (watchlist) {
         for (let i = 0; i < watchlist.length; i++) {
-          if (watchlist[i].timeStamp === previousScrape) {
-            priorScrape.push(watchlist[i]);
+          if (watchlist[i].timeStamp === parseInt(priorScrapeTs)) {
+            previousScrapeArr.push(watchlist[i]);
           }
         }
       }
     } catch (err) {
       console.log(err);
     }
-    console.log(priorScrape);
-    return priorScrape;
+    console.log(previousScrapeArr);
+    return previousScrapeArr;
   }
+
   makeTimeStampSet(watchlist) {
     let snapshotSet = new Set();
     for (let i in watchlist) {

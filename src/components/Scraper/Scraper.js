@@ -14,7 +14,7 @@ class Scraper extends Component {
     this.state = {
       watchlist: [""],
       loading: false,
-      previousScrape: null
+      previousScrapeTs: null
     };
 
     this.handleClickNewScrape = this.handleClickNewScrape.bind(this);
@@ -29,7 +29,7 @@ class Scraper extends Component {
 
   async handleClickNewScrape() {
     this.setState({
-      previousScrape: null,
+      previousScrapeTs: null,
       loading: true
     });
     try {
@@ -46,7 +46,7 @@ class Scraper extends Component {
     }
 
     this.setState({
-      previousScrape: null,
+      previousScrapeTs: null,
       loading: false
     });
     console.log(this.state.loading);
@@ -55,14 +55,14 @@ class Scraper extends Component {
 
   onSelect(e) {
     e.preventDefault();
-    console.log(this.state.previousScrape);
-    this.setState({ previousScrape: e.target.value });
+    console.log(this.state.previousScrapeTs);
     console.log(e.target.value);
-    console.log(this.state.previousScrape);
+    this.setState({ previousScrapeTs: e.target.value });
+    console.log(this.state.previousScrapeTs);
     // hooks can only be called from within a function component
     // const value = useContext(DataContext);
-    // this.setState({ previousScrape: value });
-    return this.state.previousScrape;
+    // this.setState({ previousScrapeTs: value });
+    return this.state.previousScrapeTs;
   }
 
   findAllStocks() {
@@ -85,10 +85,11 @@ class Scraper extends Component {
   }
 
   render() {
+    console.log(this.state.previousScrapeTs);
     console.log(this.state.watchlist);
     let newScrape = Data.makeNewScrape(this.state.watchlist);
-    let previousScrape = Data.makePreviousScrape(
-      this.state.previousScrape,
+    let previousScrapeArr = Data.makePreviousScrape(
+      this.state.previousScrapeTs,
       this.state.watchlist
     );
     let timeStampSet = Data.makeTimeStampSet(this.state.watchlist);
@@ -98,7 +99,7 @@ class Scraper extends Component {
       name: "Me",
       watchlist: this.state.watchlist,
       newScrape: newScrape,
-      previousScrape: previousScrape,
+      previousScrapeArr: previousScrapeArr,
       handleClickNewScrape: () => {
         this.handleClickNewScrape();
       },
@@ -106,9 +107,9 @@ class Scraper extends Component {
         this.onSelect(e);
       },
       values: [...timeStampSet.values()],
-      formatDate: epochTime => {
-        this.formatDate(epochTime);
-      },
+      // formatDate: epochTime => {
+      //   formatDate(epochTime);
+      // },
       loading: loading
     };
     // console.log(data.watchlist);
