@@ -2,7 +2,7 @@
   "name": "YFS-view",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://edwd42.github.io/YFS-view",
+  "homepage": "https://edwd42.github.io/YFS-view/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
