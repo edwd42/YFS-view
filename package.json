@@ -1,14 +1,11 @@
 {
-  "name": "YFS-view",
+  "name": "yahoo-scraper",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://edwd42.github.io/YFS-view",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -18,7 +15,6 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "axios": "^0.19.0",
     "express": "^4.16.4",
-    "gh-pages": "^2.1.1",
     "highlight.js": "^9.15.6",
     "jquery": "^3.4.1",
     "morgan": "^1.9.1",
