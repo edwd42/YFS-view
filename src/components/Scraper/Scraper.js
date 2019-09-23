@@ -34,9 +34,11 @@ class Scraper extends Component {
     });
     try {
       // let response = await axios.get(`http://localhost:8081/scrape`);
+      // https://code4developers.com/cors-anywhere/
       let response = await axios.get(
-        `https://yahoo-scraper-0.herokuapp.com/scrape`
+        `https://cors-anywhere.herokuapp.com/https://yahoo-scraper-0.herokuapp.com/scrape`
       );
+
       if (response) {
         this.setState({ watchlist: response.data });
         await this.findAllStocks();
@@ -68,7 +70,13 @@ class Scraper extends Component {
   findAllStocks() {
     $.ajax({
       // url: "http://localhost:8081/rest/api/findAllStocks/",
-      url: "https://yahoo-scraper-0.herokuapp.com/rest/api/findAllStocks/",
+      url:
+        "https://cors-anywhere.herokuapp.com/https://yahoo-scraper-0.herokuapp.com/rest/api/findAllStocks/",
+      // auth0.com blog on cors
+      // https://auth0.com/blog/cors-tutorial-a-guide-to-cross-origin-resource-sharing/
+      // headers: {
+      //   "Content-Type": "application/json"
+      // },
       dataType: "json",
       cache: false,
       success: function(data) {
